@@ -62,7 +62,19 @@ void FinishDrawingShape(T& shape, T** shapes, int* shapesCount)
 }
 
 template<class T>
-void InitializeShape(T* shape)
+void SetShapesFillColor(T* shape, sf::Color color)
 {
-	shape->setFillColor(sf::Color(255, 0, 0));
+	shape->setFillColor(color);
+}
+
+void SetLinesColor(sf::Vertex* shape, sf::Color fgColor, sf::Color bgColor)
+{
+	shape->color = fgColor;
+	(shape + 1)->color = bgColor;
+}
+
+template<class T>
+void SetShapesOutlineColor(T* shape, sf::Color color)
+{
+	shape->setOutlineColor(color);
 }
