@@ -42,13 +42,13 @@ void DrawShape(sf::Vertex* shape, sf::Vector2i mousePos)
 }
 
 template <class T>
-void IncreaseShapeArraySize(T** shapes, int newSize)
+void IncreaseShapeArraySize(T** array, int newSize)
 {
-	T* copy = *shapes;
-	*shapes = new T[newSize];
+	T* copy = *array;
+	*array = new T[newSize];
 	for (int i = 0; i < newSize - 1; i++)
 	{
-		(*shapes)[i] = copy[i];
+		(*array)[i] = copy[i];
 	}
 	delete[] copy;
 }
